@@ -1,0 +1,152 @@
+/* Global reset and box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* Container for the header */
+.flydreamair-parent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+}
+.flydreamair-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+/* Header-Specific Logo Styles */
+.header-logo .fly,
+.header-logo .dreamair {
+    font-family: 'Livvic', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    font-style: italic;
+    color: #000000; /* Black color for the header */
+}
+.header-logo .fly {
+    margin-bottom: -25px; /* Adjust spacing between Fly and DreamAir */
+}
+
+/* Adjust the spacing between "Fly" and "DreamAir" for both */
+.dreamair {
+    margin-top: 0px; /* Fine-tune spacing */
+}
+
+/* Navigation Links aligned to the right */
+.deals-parent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligns the text and buttons to the right */
+    gap: 20px;
+}
+
+.deals {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+}
+
+.latest-updates {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    text-transform: capitalize;
+}
+
+/* Sign Up Button */
+.sign-up-wrapper {
+    border-radius: 20px;
+    background-color: #283841;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    color: #ffffff;
+}
+
+.sign-up {
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .flydreamair-parent {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .deals-parent {
+        justify-content: flex-start; /* Ensures alignment for smaller screens */
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+/* Image Section */
+.image-section {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-1-icon {
+    width: 100%;
+    height: 615px;
+    object-fit: cover;
+    position: relative;
+}
+
+/* Text Overlay */
+.text-overlay {
+    position: absolute;
+    top: 35%; /* Adjust for vertical position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.discover-your-next-container {
+    position: relative;
+    font-size: 60px;
+    letter-spacing: 0.06em;
+    line-height: 72px;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-align: center;
+    max-width: 1200px; /* Set to a wider width to prevent text wrapping */
+    margin: 0 auto; /* Center the container */
+    white-space: nowrap; /* Prevent text from wrapping into more lines */
+}
+
+.discover-your-next {
+    margin: 0;
+}
+
+.discover-line-1, .discover-line-2 {
+    font-size: 60px;
+    letter-spacing: 0.06em;
+    line-height: 72px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap; /* Ensure that text stays on two lines */
+}

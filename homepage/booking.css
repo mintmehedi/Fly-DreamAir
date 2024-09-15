@@ -1,0 +1,141 @@
+.booking-section {
+    position: absolute;
+    top: 75%; /* Adjust this value to move it lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 950px;
+}
+
+.booking-box {
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.booking-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 30px 25px rgba(0, 0, 0, 0.25);
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #283841;
+}
+
+.trip-selection, .city-selection, .passenger-selection {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.trip-selection label, .passenger-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    accent-color: #283841;
+    width: 20px;
+    height: 20px;
+}
+
+.radio-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #283841;
+}
+
+/* Make "From" and "To" input boxes look the same as date input boxes */
+.city-input, .date-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(40, 56, 65, 0.06);
+    color: rgba(0, 0, 0, 0.5); /* Grey placeholder color */
+    transition: border 0.2s ease;
+}
+
+.city-input:focus, .date-input:focus {
+    border: 2px solid #283841;
+    outline: none;
+}
+
+/* Ensure the "From" and "To" placeholders also use grey color */
+.city-input::placeholder, .date-input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Same grey placeholder color */
+}
+
+.passenger-counter {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #283841;
+}
+
+.passenger-counter button {
+    background-color: #283841;
+    color: #fff;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.passenger-counter button:hover {
+    background-color: #4a5e6d;
+}
+
+.passenger-counter .minus {
+    background-color: grey;
+}
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-button button {
+    background-color: #283841;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-button button:hover {
+    background-color: #4a5e6d;
+    transform: translateY(-2px);
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input-wrapper {
+    width: 22%;
+}

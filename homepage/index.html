@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyDreamAir</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@1,900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilroy:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Larsseit:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Original CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Booking Form CSS -->
+    <link rel="stylesheet" href="booking.css">
+    <!-- Trending CSS-->
+     <link rel="stylesheet" href="trending.css">
+    <!-- Foother CSS-->
+     <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <header>
+        <div class="flydreamair-parent">
+            <!-- Logo with Fly and DreamAir on separate lines -->
+            <div class="flydreamair-logo header-logo">
+                <span class="fly">Fly</span><br>
+                <span class="dreamair">DreamAir</span>
+            </div>
+
+            <!-- Navigation Menu aligned to the right -->
+            <div class="deals-parent">
+                <div class="deals">Deals</div>
+                <div class="latest-updates">Latest Updates</div>
+                <div class="deals">Our Destinations</div>
+                <div class="deals">Flights</div>
+                <div class="deals">Help</div>
+                <div class="deals">Sign In</div>
+                
+                <!-- Sign Up Button -->
+                <div class="sign-up-wrapper">
+                    <div class="deals sign-up">Sign Up</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="image 1.png" alt="City View" class="image-1-icon">
+            <div class="text-overlay">
+                <div class="discover-your-next-container">
+                  <p class="discover-line-1">Discover Your Next Adventure</p>
+                  <p class="discover-line-2">With FlyDreamAir</p>
+                </div>
+            </div>
+            
+            <!-- Booking Form Section -->
+            <div class="booking-section">
+                <div class="booking-box">
+                    <div class="section-title">Book Your Flight</div>
+                    
+                    <!-- Trip Selection (Round Trip/One Way) -->
+                    <div class="trip-selection">
+                        <label>
+                            <input type="radio" name="trip" value="round-trip" checked>
+                            <span class="radio-label">Round Trip</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="trip" value="one-way">
+                            <span class="radio-label">One Way</span>
+                        </label>
+                    </div>
+
+                    <!-- City Selection & Date Selection in one line -->
+                    <div class="input-row">
+                        <div class="input-wrapper">
+                            <label for="from" style="display: block;">From</label>
+                            <input type="text" id="from" class="city-input" placeholder="Airport or Cities">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="to" style="display: block;">To</label>
+                            <input type="text" id="to" class="city-input" placeholder="Airport or Cities">
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="depart-date" style="display: block;">Depart When?</label>
+                            <input type="date" id="depart-date" class="date-input">
+                        </div>
+                        <div class="input-wrapper" id="return-date">
+                            <label for="return-date-input" style="display: block;">Return When?</label>
+                            <input type="date" id="return-date-input" class="date-input">
+                        </div>
+                    </div>
+
+                    <!-- Passenger Selection -->
+                    <div class="passenger-selection">
+                        <div class="passenger-counter">
+                            <span>Adults</span>
+                            <button id="adult-minus" class="minus">-</button>
+                            <span id="adult-count">1</span>
+                            <button id="adult-plus">+</button>
+                        </div>
+                        <div class="passenger-counter">
+                            <span>Children</span>
+                            <button id="child-minus" class="minus">-</button>
+                            <span id="child-count">0</span>
+                            <button id="child-plus">+</button>
+                        </div>
+                        <div class="passenger-counter">
+                            <span>Infants</span>
+                            <button id="infant-minus" class="minus">-</button>
+                            <span id="infant-count">0</span>
+                            <button id="infant-plus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Search Button -->
+                    <div class="search-button">
+                        <button>Search Flights</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Destination Section -->
+        <div class="trending-section">
+            <h2>Trending <span class="highlight">Destination</span> Now Days</h2>
+            
+            <div class="carousel-container">
+                <button class="carousel-button left-arrow">&larr;</button>
+                <div class="carousel-slide">
+                    <div class="carousel-item">
+                        <div class="city-name">Jakarta</div>
+                        <img src="jakarta.png" alt="Jakarta">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="city-name">Dubai</div>
+                        <img src="dubai.png" alt="Dubai">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="city-name">London</div>
+                        <img src="london.png" alt="London">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="city-name">Sydney</div>
+                        <img src="sydney.jpg" alt="Sydney">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="city-name">Paris</div>
+                        <img src="paris.jpg" alt="Paris">
+                    </div>
+                    <div class="carousel-item">
+                        <div class="city-name">Toronto</div>
+                        <img src="toronto.jpg" alt="Toronto">
+                    </div>
+                </div>
+                <button class="carousel-button right-arrow">&rarr;</button>
+            </div>
+        </div>
+
+        <!--Footer Section-->
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="flydreamair-logo footer-logo">
+                        <span class="fly">Fly</span>
+                        <span class="dreamair">DreamAir</span>
+                    </div>
+                </div>                
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <b class="section-title">Product</b>
+                        <ul class="section-list">
+                            <li>About</li>
+                            <li>Career</li>
+                            <li>Blog</li>
+                            <li>Special Offers</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <b class="section-title">Help</b>
+                        <ul class="section-list">
+                            <li>FAQ</li>
+                            <li>Help Center</li>
+                            <li>Privacy Policy</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <b class="section-title">Partner</b>
+                        <ul class="section-list">
+                            <li>Partner Hub</li>
+                            <li>Affiliates</li>
+                            <li>Advertise</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="subscribe-section">
+                    <b class="subscribe-title">Subscribe</b>
+                    <div class="subscription-box">
+                        <input type="email" placeholder="Email address" class="subscribe-input">
+                        <button class="subscribe-btn">→</button>
+                    </div>
+                    <p class="subscribe-info"></p>
+                </div>
+                <!-- Social Icons using Font Awesome -->
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-terms">
+                <span>Terms</span>
+                <span>Privacy</span>
+                <span>Cookies</span>
+            </div>
+        </div>
+         
+    </header>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
