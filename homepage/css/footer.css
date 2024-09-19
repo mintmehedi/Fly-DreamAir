@@ -13,13 +13,34 @@
     align-items: flex-start;
 }
 
-.flydreamair-logo i {
-    font-size: 24px;
-    font-weight: 900;
-    color: #e8b749;
-    font-family: 'Livvic', sans-serif;
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
 }
 
+.flydreamair-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+.footer-logo .fly,
+.footer-logo .dreamair {
+    font-family: 'Livvic', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    font-style: italic;
+    color: #e8b749; /* Yellow color for the footer */
+}
+
+/* Ensure header text stays on separate lines */
+.footer-logo .fly {
+    margin-bottom: -5px; /* Adjust spacing between Fly and DreamAir */
+}
+.dreamair {
+    margin-top: 10px; /* Fine-tune spacing */
+}
 .footer-sections {
     display: flex;
     gap: 100px;
@@ -28,12 +49,14 @@
 .footer-section {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .section-title {
     font-size: 16px;
     margin-bottom: 15px;
     font-family: 'DM Sans', sans-serif;
+    color: #ffff;
 }
 
 .section-list {
@@ -41,7 +64,7 @@
     padding: 0;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 239, 239, 0.75);
 }
 
 .section-list li {
@@ -123,7 +146,7 @@
     justify-content: space-between;
     max-width: 300px;
     margin-top: 15px;
-    margin-left: 500px;
+    margin-left: 600px;
     font-size: 12px;
     font-weight: 500;
 }

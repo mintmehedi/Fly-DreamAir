@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <link rel="stylesheet" href="seat.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <!-- Seat selection grid on the left -->
+            <div class="seat-selection-box">
+                <h2>Select Your Seat</h2>
+                <div id="seat-grid" class="seat-grid"></div>
+                <div id="selected-seat" class="seat-info">Selected Seat: <span>None</span></div>
+            </div>
+
+            <!-- New Box for Confirming Seat on the right -->
+            <div class="confirm-box">
+                <p>Your selected seat number is: <span id="confirm-seat-number"></span></p>
+                <button class="confirm-button" id="confirm-button" disabled>Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="seat.js"></script>
+</body>
+</html>

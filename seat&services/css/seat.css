@@ -1,0 +1,109 @@
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #283841;
+}
+.seat-selection-box h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #283841;
+    margin-bottom: 20px; /* Adjust the value to increase/decrease the space */
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.seat-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.seat-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.seat-group {
+    display: flex;
+    gap: 5px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: #283841; /* Default seat color */
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.seat.available:hover {
+    background-color: #4a5e6d; /* Hover effect for available seats */
+}
+
+.seat.booked {
+    background-color: #6c757d68; /* Booked seat color */
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: #E8B749; /* Selected seat color */
+}
+
+.aisle {
+    width: 50px;
+}
+
+.row-gap {
+    height: 20px;
+}
+
+.seat-confirmation {
+    margin-top: 20px; /* Add space between selected seat info and confirmation */
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.seat-confirmation p {
+    font-size: 18px;
+    color: #283841;
+    font-weight: bold;
+}
+
+#confirm-seat-number {
+    color: #E8B749; /* Highlight selected seat */
+    font-weight: bold;
+}
+
+.confirm-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #E8B749;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.confirm-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.confirm-button:hover:not(:disabled) {
+    background-color: #d1a837;
+}

@@ -1,0 +1,53 @@
+/* Main container for the left (seat and confirmation) and right (onboard services) sections */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px; /* Ensure there's padding for better layout */
+    gap: 30px; /* Space between the sections */
+}
+
+/* Left side for seat selection and confirmation */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 20px; /* Gap between the seat and confirmation boxes */
+}
+
+
+/* Confirmation box stacked under seat selection */
+.confirm-box {
+    background-color: #283841;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Onboard services section on the right */
+.onboard-services {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px; /* Adjust width to make it smaller */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section,
+    .onboard-services {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
