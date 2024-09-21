@@ -143,13 +143,15 @@
 
 .footer-terms {
     display: flex;
-    justify-content: space-between;
-    max-width: 300px;
+    justify-content: center; /* Center-align the items */
+    text-align: center; /* Ensure text alignment in the center */
+    gap: 20px; /* Add space between each term */
     margin-top: 15px;
-    margin-left: 600px;
     font-size: 12px;
     font-weight: 500;
+    width: 100%; /* Make sure it spans the whole footer */
 }
+
 
 .footer-terms span {
     cursor: pointer;

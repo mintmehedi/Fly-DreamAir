@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header, footer, section, div {
+    margin: 0;
+    padding: 0;
+}
+
+/* Disable any default padding or margin that might cause gaps */
+body {
+    overflow-x: hidden;
+}
+.container {
+    margin: 0 auto;
+    padding: 0; /* Ensure no padding in the container */
+    width: 100%;
+    max-width: 1200px; /* set a max-width to ensure the content stays centered */
+}
