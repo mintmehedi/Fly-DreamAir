@@ -69,21 +69,38 @@ html, body {
 }
 
 /* Sign Up Button */
+/* Update the sign-up-wrapper class */
 .sign-up-wrapper {
     border-radius: 20px;
-    background-color: #283841;
     height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
     color: #ffffff;
+    border: 2px solid #283841; /* Add border */
+    background-color: #283841; /* Dark background by default */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sign-up button hover effect */
+.sign-up-wrapper:hover {
+    background-color: #fff; /* On hover, background becomes white */
+    color: #283841; /* Text becomes dark */
 }
 
 .sign-up {
     font-weight: 500;
-    color: #fff;
+    color: #fff; /* Default white text */
+    font-size: 14px;
+    transition: color 0.3s ease;
 }
+
+/* Ensure text color changes correctly on hover */
+.sign-up-wrapper:hover .sign-up {
+    color: #283841; /* Dark text on hover */
+}
+
 
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
