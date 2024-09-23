@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Confirmation - FlyDreamAir</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@1,900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilroy:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Larsseit:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/confirmation.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="flydreamair-parent">
+            <div class="flydreamair-logo header-logo">
+                <span class="fly">Fly</span><br>
+                <span class="dreamair">DreamAir</span>
+            </div>
+            <div class="deals-parent">
+                <div class="deals">Help</div>
+                <div class="deals">Sign In</div>
+                <div class="sign-up-wrapper">
+                    <div class="deals sign-up">Sign Up</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Flight Confirmation Section -->
+    <div class="confirmation-container">
+        <h1>Confirm Your Flight</h1>
+
+        <div class="flight-summary">
+            <h2>Flight Summary</h2>
+            <div class="flight-details">
+                <p><strong>Departure:</strong> SYD 8:15 AM ➔ MEL 9:50 AM</p>
+                <p><strong>Return:</strong> MEL 4:30 PM ➔ SYD 6:10 AM</p>
+                <p><strong>Date:</strong> 25th September 2024</p>
+                <p><strong>Flight Price:</strong> $230</p>
+            </div>
+        </div>
+
+        <!-- Personal Details Section -->
+        <div class="personal-details">
+            <h2>Passenger Information</h2>
+            <form id="confirmation-form">
+                <div class="input-container">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+        
+                <div class="input-container">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+        
+                <div class="input-container">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+        
+                <div class="input-container">
+                    <label for="passport">Passport Number:</label>
+                    <input type="text" id="passport" name="passport" required>
+                </div>
+        
+                <div class="input-container">
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                    </select>
+                </div>
+        
+                <button type="submit" class="confirm-btn">Confirm Booking</button>
+            </form>
+        </div>
+        
+
+
+<script src="../js/confirmation.js"></script>
+</body>
+</html>

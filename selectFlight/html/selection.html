@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">  <!-- Linking css files-->
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="../css/selection.css">
 </head>
 <body>
+
+    <!-- Header Section -->
     <header>
         <div class="flydreamair-parent">
             <div class="flydreamair-logo header-logo">
@@ -23,10 +24,7 @@
                 <span class="dreamair">DreamAir</span>
             </div>
             <div class="deals-parent">
-                <div class="deals">Deals</div>
-                <div class="latest-updates">Latest Updates</div>
-                <div class="deals">Our Destinations</div>
-                <div class="deals">Flights</div>
+                <div class="deals">Home</div>
                 <div class="deals">Help</div>
                 <div class="deals">Sign In</div>
                 <div class="sign-up-wrapper">
@@ -36,6 +34,88 @@
         </div>
     </header>
 
+    <!-- Filters and Results Section -->
+    <div class="filters-and-results">
+        <div class="filters">
+            <button class="price-alerts-btn">Get Price Alerts</button>
+            <div class="filter-category">
+                <h4>Stops</h4>
+                <label><input type="checkbox"> Direct</label>
+                <label><input type="checkbox"> 1 Stop</label>
+                <label><input type="checkbox"> 2+ Stops</label>
+            </div>
+            <div class="filter-category">
+                <h4>Departure Times</h4>
+                <label><input type="checkbox"> Morning</label>
+                <label><input type="checkbox"> Afternoon</label>
+                <label><input type="checkbox"> Evening</label>
+            </div>
+            <div class="filter-category">
+                <h4>Journey Duration</h4>
+                <label><input type="checkbox"> Short</label>
+                <label><input type="checkbox"> Medium</label>
+                <label><input type="checkbox"> Long</label>
+            </div>
+            <div class="filter-category">
+                <h4>Airlines</h4>
+                <label><input type="checkbox"> Airline 1</label>
+                <label><input type="checkbox"> Airline 2</label>
+            </div>
+            <div class="filter-category">
+                <h4>Airports</h4>
+                <label><input type="checkbox"> Airport 1</label>
+                <label><input type="checkbox"> Airport 2</label>
+            </div>
+        </div>
+
+        <div class="results">
+            <div class="sort-section">
+                <span>9 Results</span>
+                <select>
+                    <option value="cheapest">Cheapest Flight</option>
+                    <option value="cheapest">Fastest Flight</option>
+                </select>
+            </div>
+
+            <!-- Updated Flight Cards with Larger Size -->
+            <div class="flight-card" data-price="230">
+                <div>
+                    <div class="flight-time">SYD 8:15 AM ➔ MEL 9:50 AM</div>
+                    <div class="flight-time">MEL 4:30 PM ➔ SYD 6:10 AM</div>
+                </div>
+                <div class="flight-price">
+                    <div>$230</div>
+                    <button class="select-btn">Select</button>
+                </div>
+            </div>
+
+            <div class="flight-card" data-price="245">
+                <div>
+                    <div class="flight-time">SYD 9:00 AM ➔ MEL 10:35 AM</div>
+                    <div class="flight-time">MEL 5:00 PM ➔ SYD 7:00 AM</div>
+                </div>
+                <div class="flight-price">
+                    <div>$245</div>
+                    <button class="select-btn">Select</button>
+                </div>
+            </div>
+
+            <div class="flight-card" data-price="250">
+                <div>
+                    <div class="flight-time">SYD 10:30 AM ➔ MEL 12:00 PM</div>
+                    <div class="flight-time">MEL 7:30 PM ➔ SYD 9:30 PM</div>
+                </div>
+                <div class="flight-price">
+                    <div>$250</div>
+                    <button class="select-btn">Select</button>
+                </div>
+            </div>
+
+            <button class="show-more-results-btn">Show More Results</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -44,7 +124,7 @@
                         <span class="fly">Fly</span>
                         <span class="dreamair">DreamAir</span>
                     </div>
-                </div>                
+                </div>
                 <div class="footer-sections">
                     <div class="footer-section">
                         <b class="section-title">Product</b>
@@ -94,6 +174,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+<script src="../js/selection.js"></script>
 </body>
 </html>
