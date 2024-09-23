@@ -384,6 +384,8 @@ select:hover {
     margin-top: 15px;
     font-size: 12px;
     font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-terms span {
