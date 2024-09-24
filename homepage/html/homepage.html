@@ -36,9 +36,9 @@
             <div class="deals-parent">
                 <div class="deals">Deals</div>
                 <div class="latest-updates">Latest Updates</div>
-                <div class="deals">Our Destinations</div>
+                <div class="deals" id="our-destinations">Our Destinations</div>
                 <div class="deals">Flights</div>
-                <div class="deals">Help</div>
+                <div class="deals" id="help-link">Help</div>
                 <div class="deals">Sign In</div>
                 
                 <!-- Sign Up Button -->
@@ -47,7 +47,7 @@
                 </div>
             
                 <!-- Manage Booking Button -->
-                <div class="deals manage-booking">Manage Booking</div>
+                <div class="deals manage-booking" id="mb">Manage Booking</div>
             </div>
         </div>
             
@@ -83,13 +83,16 @@
                     <!-- City Selection & Date Selection in one line -->
                     <div class="input-row">
                         <div class="input-wrapper">
-                            <label for="from" style="display: block;">From</label>
+                            <label for="from">From</label>
                             <input type="text" id="from" class="city-input" placeholder="Airport or Cities">
+                            <ul id="from-suggestions" class="suggestions-list"></ul> <!-- Suggestions for "From" -->
                         </div>
+                        
                         <div class="input-wrapper">
-                            <label for="to" style="display: block;">To</label>
+                            <label for="to">To</label>
                             <input type="text" id="to" class="city-input" placeholder="Airport or Cities">
-                        </div>
+                            <ul id="to-suggestions" class="suggestions-list"></ul> <!-- Suggestions for "To" -->
+                        </div>                        
 
                         <div class="input-wrapper">
                             <label for="depart-date" style="display: block;">Depart When?</label>
@@ -225,7 +228,6 @@
                 <span>Cookies</span>
             </div>
         </div>
-
     <!-- Script -->
     <script src="../js/script.js"></script>
 </body>

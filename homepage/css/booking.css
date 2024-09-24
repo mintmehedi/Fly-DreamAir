@@ -139,3 +139,32 @@ input[type="radio"] {
 .input-wrapper {
     width: 22%;
 }
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;               /* Remove padding */
+    margin: 0;                /* Remove margin */
+    border: none;             /* Remove border */
+    max-height: 100px;        /* Smaller max height */
+    overflow-y: auto;         /* Enable vertical scroll */
+    position: absolute;       /* Position it below the input field */
+    width: 100%;              /* Match input width */
+    background-color: white;  /* Background color */
+    z-index: 999;             /* Ensure it stays above other content */
+    font-size: 12px;          /* Smaller font size */
+    border-radius: 4px;       /* Smooth corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: none;            /* Hide by default */
+}
+
+.suggestions-list li {
+    padding: 5px 8px;         /* Reduce padding */
+    cursor: pointer;          /* Pointer cursor */
+    transition: background-color 0.2s ease-in-out; /* Smooth hover */
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0; /* Background change on hover */
+}
+
+
+

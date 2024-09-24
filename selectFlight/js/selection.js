@@ -61,3 +61,46 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const fromCity = urlParams.get('from');
+    const toCity = urlParams.get('to');
+    const departDate = urlParams.get('departDate');
+    const returnDate = urlParams.get('returnDate');
+    const tripType = urlParams.get('tripType');  // one-way or round-trip
+
+    // Select all flight cards
+    const flightCards = document.querySelectorAll('.flight-card');
+    
+    // Iterate through each flight card and update the flight details dynamically
+    flightCards.forEach(card => {
+        const flightTimeElements = card.querySelectorAll('.flight-time');
+
+        // If it's a one-way trip, update only the departure information
+        if (tripType === 'one-way') {
+            flightTimeElements.forEach((element, index) => {
+                if (index === 0) {
+                    // Update departure flight
+                    const originalText = element.textContent;  
+                    const updatedText = originalText.replace(/SYD/g, fromCity).replace(/MEL/g, toCity);
+                    element.textContent = updatedText;
+                } else {
+                    // Hide the return flight (since it's one-way)
+                    element.style.display = 'none';
+                }
+            });
+        } else {
+            // If it's a round-trip, update both departure and return flights
+            flightTimeElements.forEach(element => {
+                const originalText = element.textContent;
+                const updatedText = originalText.replace(/SYD/g, fromCity).replace(/MEL/g, toCity);
+                element.textContent = updatedText;
+            });
+        }
+    });
+});
+
+
+
