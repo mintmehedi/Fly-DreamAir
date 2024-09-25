@@ -34,39 +34,64 @@
         </div>
     </header>
 
-    <!-- Credit Card Form Section -->
-    <div class="credit-card-container">
-        <h2>Enter Your Credit Card Details</h2>
-        <form id="credit-card-form">
-            <div class="form-group">
-                <label for="card-name">Cardholder's Name:</label>
-                <input type="text" id="card-name" name="card-name" required>
+    <!-- Payment Section: Credit Card Form and Purchase Summary -->
+    <div class="payment-container">
+        <!-- Credit Card Form -->
+        <div class="credit-card-container">
+            <h2>Enter Your Credit Card Details</h2>
+            <form id="credit-card-form">
+                <div class="form-group">
+                    <label for="card-name">Cardholder's Name:</label>
+                    <input type="text" id="card-name" name="card-name" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" required maxlength="19" placeholder="1234 5678 9123 4567">
+                </div>
+        
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM/YY" maxlength="5">
+                </div>
+        
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required maxlength="3" placeholder="123">
+                </div>
+        
+                <div class="form-group">
+                    <label for="billing-address">Billing Address:</label>
+                    <input type="text" id="billing-address" name="billing-address" required>
+                </div>
+        
+                <button type="submit" class="submit-btn" id="Submit">Submit Payment</button>
+            </form>
+        </div>
+
+        <!-- Purchase Summary Box -->
+       <!-- Purchase Summary Box -->
+        <div class="purchase-summary">
+            <h2>Purchase Summary</h2>
+            <div class="summary-item">
+                <p>Flight Fare:</p>
+                <span id="flight-fare">$230</span> <!-- Unique ID for flight fare -->
             </div>
-    
-            <div class="form-group">
-                <label for="card-number">Card Number:</label>
-                <input type="text" id="card-number" name="card-number" required maxlength="19" placeholder="1234 5678 9123 4567">
+            <div class="summary-item">
+                <p>Taxes & Fees:</p>
+                <span id="taxes-fees">$50</span> <!-- Unique ID for taxes -->
             </div>
-    
-            <div class="form-group">
-                <label for="expiry-date">Expiry Date (MM/YY):</label>
-                <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM/YY" maxlength="5">
+            <div class="summary-item">
+                <p>Onboard Services:</p>
+                <span id="onboard-services-cost">$20</span> <!-- Unique ID for onboard services -->
             </div>
-    
-            <div class="form-group">
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" required maxlength="3" placeholder="123">
+            <hr>
+            <div class="summary-item total">
+                <p>Total Amount:</p>
+                <span id="total-amount">$300</span> <!-- Unique ID for total amount -->
             </div>
-    
-            <div class="form-group">
-                <label for="billing-address">Billing Address:</label>
-                <input type="text" id="billing-address" name="billing-address" required>
-            </div>
-    
-            <button type="submit" class="submit-btn">Submit Payment</button>
-        </form>
+        </div>
     </div>
-    
 
     <!-- Footer Section -->
     <footer>
@@ -113,7 +138,6 @@
                     </div>
                 </div>
                 <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>

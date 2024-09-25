@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Seat selection logic
     const seatGrid = document.getElementById('seat-grid');
     const confirmSeatNumber = document.getElementById('confirm-seat-number');
     const confirmButton = document.getElementById('confirm-button');
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 seatButton.classList.add('selected');
                 selectedSeat = seatButton;
-                
+
                 // Update the confirmation box
                 confirmSeatNumber.innerHTML = `${row}${seatLabel}`;
                 confirmButton.disabled = false; // Enable the confirm button after seat selection
@@ -90,4 +91,80 @@ document.addEventListener('DOMContentLoaded', function() {
             seatGrid.appendChild(gapDiv);
         }
     }
+
+    // When user confirms the seat
+    confirmButton.addEventListener('click', function() {
+        if (selectedSeat) {
+            const seatNumber = selectedSeat.textContent;
+
+            // Store the selected seat number in sessionStorage
+            sessionStorage.setItem('seatNumber', seatNumber);
+
+            alert(`Seat ${seatNumber} has been confirmed.`);
+            confirmButton.disabled = true;  // Disable the confirm button after confirmation
+        }
+    });
+
+    // Onboard services logic
+    function handleCounter(serviceId) {
+        const decreaseBtn = document.querySelector(`#${serviceId} .decrease`);
+        const increaseBtn = document.querySelector(`#${serviceId} .increase`);
+        const quantityDisplay = document.querySelector(`#${serviceId} .quantity`);
+        const serviceCostPerItem = 20;  // Cost per item is $20
+        let quantity = 0;
+
+        increaseBtn.addEventListener('click', () => {
+            quantity++;
+            quantityDisplay.textContent = quantity;
+            updateOnboardServicesTotal();  // Update the total when increasing quantity
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            if (quantity > 0) {
+                quantity--;
+                quantityDisplay.textContent = quantity;
+                updateOnboardServicesTotal();  // Update the total when decreasing quantity
+            }
+        });
+
+        return {
+            getQuantity: () => quantity,
+            getTotalCost: () => quantity * serviceCostPerItem
+        };
+    }
+
+    // Initialize onboard services counters
+    const services = [
+        'chocolate-bars-qty', 'crackers-qty', 'cookies-qty', 'noodles-qty',
+        'sandwiches-qty', 'pasta-qty', 'salads-qty', 'coffee-tea-qty',
+        'soft-drinks-qty', 'water-qty', 'juices-qty'
+    ];
+
+    const serviceHandlers = services.map(serviceId => handleCounter(serviceId));
+
+    // Function to update the total cost of onboard services
+    function updateOnboardServicesTotal() {
+        const totalCost = serviceHandlers.reduce((sum, handler) => sum + handler.getTotalCost(), 0);
+        const onboardServicesTotalElement = document.getElementById('onboard-services-total');
+        
+        if (onboardServicesTotalElement) {
+            onboardServicesTotalElement.textContent = `$${totalCost}`;
+        }
+
+        // Store the onboard services total in sessionStorage for use on the payment page
+        sessionStorage.setItem('onboardServicesTotal', totalCost);
+    }
+
+    // Continue to the next page (payment page)
+    document.getElementById('Continue').addEventListener('click', function() {
+        // Ensure the seat number is stored before continuing
+        const seatNumber = sessionStorage.getItem('seatNumber');
+        if (!seatNumber) {
+            alert('Please confirm your seat selection before continuing.');
+            return;
+        }
+
+        // Redirect to the payment page
+        window.location.href = '../../cardDetails/html/cardDetails.html';  // Adjust this URL as needed
+    });
 });

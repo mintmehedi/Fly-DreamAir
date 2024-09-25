@@ -1,8 +1,33 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve the flight fare from sessionStorage
+    const flightFare = sessionStorage.getItem('flightFare') || 'N/A';
+    
+    // Retrieve the onboard services total from sessionStorage
+    const onboardServicesTotal = sessionStorage.getItem('onboardServicesTotal') || '0';
+
+    // Update the flight fare in the purchase summary
+    document.getElementById('flight-fare').textContent = `$${flightFare}`;
+    
+    // Update the onboard services cost in the purchase summary
+    if (onboardServicesTotal === '0') {
+        document.getElementById('onboard-services-cost').textContent = 'None';
+    } else {
+        document.getElementById('onboard-services-cost').textContent = `$${onboardServicesTotal}`;
+    }
+
+    // Calculate the total amount including taxes and services
+    const taxes = 50;
+    const totalAmount = parseFloat(flightFare) + parseFloat(onboardServicesTotal) + taxes;
+
+    // Update the total amount in the purchase summary
+    document.getElementById('total-amount').textContent = `$${totalAmount}`;
+});
+
 document.getElementById('credit-card-form').addEventListener('submit', function(event) {
     event.preventDefault();  // Prevent form from submitting
 
     // Collect input values
-    const cardName = document.getElementById('card-name').value.trim();
+    const cardName = document.getElementById('card-name').value.trim();  // Correct ID
     const cardNumber = document.getElementById('card-number').value.replace(/\s+/g, ''); // Remove spaces
     const expiryDate = document.getElementById('expiry-date').value.trim();
     const cvv = document.getElementById('cvv').value.trim();
@@ -30,9 +55,11 @@ document.getElementById('credit-card-form').addEventListener('submit', function(
     if (cardName && cardNumber && expiryDate && cvv && billingAddress) {
         alert('Payment processed successfully!\nThank you for booking with FlyDreamAir.');
         
-        // Redirect to the "Payment Successful" page
-        window.location.href = 'file:///Users/tabibkamal/Desktop/214%20grp%20project/last/6.html';  // Replace with your actual "Payment Success" page URL
+        // Store the cardholder's name in sessionStorage
+        sessionStorage.setItem('passengerName', cardName);
 
+        // Redirect to the receipt page
+        window.location.href = '../../receipt/html/receipt.html';
     } else {
         alert('Please fill out all required fields.');
     }

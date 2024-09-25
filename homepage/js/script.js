@@ -1,11 +1,21 @@
 document.getElementById('our-destinations').addEventListener('click', function() {
     window.location.href = '../../destinations/html/destination.html';
 });
+
 document.getElementById('help-link').addEventListener('click', function() {
     window.location.href = '../../help/html/help.html';
 });
+
 document.getElementById('mb').addEventListener('click', function() {
     window.location.href = '../../manageBooking/html/mb.html';
+});
+
+document.getElementById('sign-up').addEventListener('click', function() {
+    window.location.href = '../../signup/html/signup.html';
+});
+
+document.getElementById('sign-in').addEventListener('click', function() {
+    window.location.href = '../../login/html/login.html';
 });
 
 // JS for handling round trip and one way functionality
@@ -19,7 +29,6 @@ document.querySelectorAll('input[name="trip"]').forEach((radio) => {
         }
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.search-button button').addEventListener('click', function() {
@@ -41,9 +50,21 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Prepare the URL based on whether the trip is round-trip or one-way
+        // Store the data in sessionStorage for use in the receipt page
+        sessionStorage.setItem('flightData', JSON.stringify({
+            fromCity,
+            toCity,
+            departDate,
+            returnDate,
+            adults,
+            children,
+            infants,
+            tripType
+        }));
+
+        // Prepare the URL for the selection page
         let url = `../../selectFlight/html/selection.html?from=${encodeURIComponent(fromCity)}&to=${encodeURIComponent(toCity)}&departDate=${encodeURIComponent(departDate)}&adults=${encodeURIComponent(adults)}&children=${encodeURIComponent(children)}&infants=${encodeURIComponent(infants)}&tripType=${encodeURIComponent(tripType)}`;
-        
+
         // Add return date to the URL only if it's a round-trip
         if (tripType === 'round-trip' && returnDate) {
             url += `&returnDate=${encodeURIComponent(returnDate)}`;
@@ -119,8 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
 
 // JS for passenger counter
 let adultCount = 1;

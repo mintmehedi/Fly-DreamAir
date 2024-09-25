@@ -95,15 +95,23 @@ a {
     color: #283841;
 }
 
-/* Credit Card Form Section */
-.credit-card-container {
-    width: 50%;
+/* Payment Section */
+.payment-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
     margin: 50px auto;
+}
+
+/* Credit Card Form */
+.credit-card-container {
+    width: 60%;  /* Reduce width to fit alongside purchase summary */
     padding: 40px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 h2 {
@@ -135,8 +143,8 @@ input[type="date"] {
 
 /* Hover effect for the box */
 .credit-card-container:hover {
-    transform: translateY(-10px);  /* Slight lift effect */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Enhanced shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 button.submit-btn {
@@ -154,6 +162,43 @@ button.submit-btn {
 button.submit-btn:hover {
     background-color: #d1a43f;
 }
+
+/* Purchase Summary Box */
+.purchase-summary {
+    width: 35%;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purchase-summary h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.summary-item p {
+    font-size: 16px;
+}
+
+.summary-item span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.summary-item.total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 /* Footer Section */
 .footer-container {

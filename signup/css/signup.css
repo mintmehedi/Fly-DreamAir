@@ -1,0 +1,175 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    border: 2px solid #5882C1;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    backdrop-filter: blur(18px);
+}
+
+.title {
+    font-size: 24px;
+    font-family: 'Livvic', sans-serif;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Form Group Styles */
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 10px 12px 40px;
+    background: #F2F3F4;
+    border-radius: 5px;
+    border: 1px solid #BCBEC0;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+    padding: 12px 15px 12px 50px;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group input:focus {
+    border-color: #5882C1;
+}
+
+/* Icon inside Input */
+.input-icon {
+    position: absolute;
+    left: 10px;
+    color: #b0b0b0; /* Light grey color for the icon */
+    font-size: 18px;
+}
+
+/* Terms and Conditions */
+.agreement {
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.checkbox-container input {
+    margin-right: 8px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    background: #333;
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-btn i {
+    color: white;
+}
+
+.social-btn.facebook {
+    background-color: #316FF6;
+    border: 1px solid #316FF6;
+}
+
+.social-btn.google {
+    background-color: white;
+    border: 1px solid #DB4437;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-text .login-link {
+    color: #E8B749;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-text .login-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+}

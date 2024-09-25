@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>FlyDreamAir Registration</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">Welcome to FlyDreamAir</div>
+        <!-- Registration Form -->
+        <form id="registration-form">
+            <!-- Username Input -->
+            <div class="form-group">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            </div>
+    
+            <!-- Email Input -->
+            <div class="form-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            </div>
+    
+            <!-- Password Input -->
+            <div class="form-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            </div>
+    
+            <!-- Confirm Password Input -->
+            <div class="form-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Enter Password Again" required>
+            </div>
+    
+            <!-- Phone Input -->
+            <div class="form-group">
+                <i class="fas fa-phone input-icon"></i>
+                <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required>
+            </div>
+    
+            <!-- Date of Birth Input -->
+            <div class="form-group">
+                <i class="fas fa-calendar-alt input-icon"></i>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+    
+            <!-- Terms and Conditions -->
+            <div class="agreement">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms of services and privacy policy</label>
+                </div>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    
+        <!-- Social Sign-In Buttons -->
+        <div class="social-buttons">
+            <button class="social-btn facebook">
+                <img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg" alt="Facebook F">
+            </button>
+            <button class="social-btn google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google G">
+            </button>
+        </div>
+    
+        <!-- Login Link -->
+        <div class="footer-text">
+            Already have an account? <a href="#" class="login-link">Log in</a>
+        </div>
+    </div>
+
+<script src="../js/signup.js"></script>
+</body>
+</html>
