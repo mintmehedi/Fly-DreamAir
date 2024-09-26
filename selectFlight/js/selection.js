@@ -11,7 +11,7 @@ document.getElementById('sign-in').addEventListener('click', function() {
 });
 
 document.getElementById('home').addEventListener('click', function() {
-    window.location.href = '../../homepage/html/homepage.html';
+    window.location.href = '/index.html';
 });
 
 // Select all buttons with the class 'select-btn' and add an event listener to each
