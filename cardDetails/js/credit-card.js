@@ -55,8 +55,9 @@ document.getElementById('credit-card-form').addEventListener('submit', function(
     if (cardName && cardNumber && expiryDate && cvv && billingAddress) {
         alert('Payment processed successfully!\nThank you for booking with FlyDreamAir.');
         
-        // Store the cardholder's name in sessionStorage
-        sessionStorage.setItem('passengerName', cardName);
+        // Store the cardholder's name separately as 'cardHolderName'
+        sessionStorage.setItem('cardHolderName', cardName);
+
 
         // Redirect to the receipt page
         window.location.href = '../../receipt/html/receipt.html';

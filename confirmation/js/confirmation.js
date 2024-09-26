@@ -1,29 +1,40 @@
-// JavaScript to handle the confirmation process
-
-// Mock data for flight selection (you can replace this with dynamic data)
-const selectedFlight = {
-    departureFlight: 'SYD 8:15 AM ➔ MEL 9:50 AM',
-    returnFlight: 'MEL 4:30 PM ➔ SYD 6:10 AM',
-    flightDate: '25th September 2024',
-    price: 230
-};
-
 // Load flight details on page load
 window.onload = function() {
-    // Update the flight summary details
-    document.getElementById('departure-flight').innerText = selectedFlight.departureFlight;
-    document.getElementById('return-flight').innerText = selectedFlight.returnFlight;
-    document.getElementById('flight-date').innerText = selectedFlight.flightDate;
-    document.getElementById('flight-price').innerText = selectedFlight.price;
+    // Retrieve stored data from sessionStorage
+    const flightData = JSON.parse(sessionStorage.getItem('flightData'));
+    const flightFare = sessionStorage.getItem('flightFare');
+    const departureTime = sessionStorage.getItem('departureTime');
+    const returnTime = sessionStorage.getItem('returnTime');
+    const tripType = flightData.tripType; // Get the trip type (round-trip or one-way)
+
+    if (flightData && departureTime) {
+        // Update the flight summary with the retrieved session data
+        document.querySelector('.flight-summary .flight-details').innerHTML = `
+            <p><strong>Departure:</strong> ${departureTime}</p>
+        `;
+
+        // Check if it's a round-trip or one-way
+        if (tripType === 'round-trip' && returnTime) {
+            // Display the return flight details for round-trip
+            document.querySelector('.flight-summary .flight-details').innerHTML += `
+                <p><strong>Return:</strong>${returnTime}</p>
+            `;
+        } else {
+            // Hide the return flight section entirely for one-way
+        }
+
+        // Show the flight fare and date as normal
+        document.querySelector('.flight-summary .flight-details').innerHTML += `
+            <p><strong>Date:</strong> ${flightData.departDate}</p>
+            <p><strong>Flight Price:</strong> $${flightFare}</p>
+        `;
+    } else {
+        alert('No flight data found. Please go back and select your flight again.');
+    }
 
     // Initialize payment instructions based on default method
     updatePaymentInstructions(document.getElementById('payment-method').value);
 };
-
-// Update payment instructions based on the selected method
-document.getElementById('payment-method').addEventListener('change', function(event) {
-    updatePaymentInstructions(event.target.value);
-});
 
 // Function to update payment instructions based on the selected method
 function updatePaymentInstructions(paymentMethod) {
@@ -56,8 +67,13 @@ function updatePaymentInstructions(paymentMethod) {
 document.getElementById('confirmation-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
-    // Get all the form values
+    // Get the full name from the form
     const fullName = document.getElementById('full-name').value;
+
+    // Store the full name in sessionStorage
+    sessionStorage.setItem('passengerName', fullName);
+
+    // Get other form values (if needed)
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const passport = document.getElementById('passport').value;
@@ -67,9 +83,10 @@ document.getElementById('confirmation-form').addEventListener('submit', function
     if (fullName && email && phone && passport) {
         alert(`Flight booked successfully!\n\nFull Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nPayment Method: ${paymentMethod}`);
         
-        // Redirect to Payment Success page after confirmation
-        window.location.href = 'file:///Users/tabibkamal/Desktop/214%20grp%20project/seat&services/html/seat&service.html';  // Replace with the actual URL of your payment success page
+        // Redirect to the next page after confirmation
+        window.location.href = '../../seat&services/html/seat&service.html';  // Replace with the actual URL
     } else {
-         alert('Please fill out all required fields.');
+        alert('Please fill out all required fields.');
     }
 });
+

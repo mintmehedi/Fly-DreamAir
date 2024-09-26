@@ -10,6 +10,7 @@ function getPassengerName() {
     return passengerName || 'John Doe';  // Default name if not found
 }
 
+
 // Function to retrieve seat number from sessionStorage
 function getSeatNumber() {
     return sessionStorage.getItem('seatNumber') || 'N/A';  // Return 'N/A' if no seat number is found

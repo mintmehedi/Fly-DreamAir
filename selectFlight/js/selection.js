@@ -20,14 +20,18 @@ document.querySelectorAll('.select-btn').forEach(button => {
         // Get the parent flight card of the clicked button
         const flightCard = this.closest('.flight-card');
         
-        // Extract the flight price from the flight card
+        // Extract the flight price, departure time, and return time from the flight card
         const flightPrice = flightCard.getAttribute('data-price');
+        const departureTime = flightCard.querySelectorAll('.flight-time')[0].textContent;
+        const returnTime = flightCard.querySelectorAll('.flight-time')[1].textContent;
         
-        // Store the flight price in sessionStorage
+        // Store the flight details (including times) in sessionStorage
         sessionStorage.setItem('flightFare', flightPrice);
+        sessionStorage.setItem('departureTime', departureTime);
+        sessionStorage.setItem('returnTime', returnTime);
         
         // Redirect to the seat and service page
-        window.location.href = '../../seat&services/html/seat&service.html';
+        window.location.href = '../../confirmation/html/confirmation.html';
     });
 });
 

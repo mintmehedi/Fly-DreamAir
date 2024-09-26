@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 const API_KEY = '22b4e4afb0msh1b63950228bc573p112f40jsne871eaa81fdc';  // Your RapidAPI key
 
 // Function to fetch city suggestions from the GeoDB Cities API
@@ -111,32 +110,54 @@ function showSuggestions(inputElement, suggestionElement, suggestions) {
     }
 }
 
-
 // Add event listeners for "From" and "To" inputs
 document.addEventListener('DOMContentLoaded', function() {
     const fromInput = document.getElementById('from');
     const fromSuggestions = document.getElementById('from-suggestions');
-    
-    fromInput.addEventListener('input', async function() {
-        const query = fromInput.value;
-        if (query.length >= 2) {  // Only search if user has typed at least 2 characters
-            const suggestions = await fetchCitySuggestions(query);
-            showSuggestions(fromInput, fromSuggestions, suggestions);
-        } else {
-            fromSuggestions.innerHTML = '';  // Clear suggestions if input is empty
-        }
-    });
-
     const toInput = document.getElementById('to');
     const toSuggestions = document.getElementById('to-suggestions');
 
+    // Event listeners for input focus to hide the other dropdown
+    fromInput.addEventListener('focus', function() {
+        toSuggestions.innerHTML = '';  // Clear "to" suggestions when focusing on "from"
+        toSuggestions.style.display = 'none';  // Hide the "to" dropdown
+    });
+
+    toInput.addEventListener('focus', function() {
+        fromSuggestions.innerHTML = '';  // Clear "from" suggestions when focusing on "to"
+        fromSuggestions.style.display = 'none';  // Hide the "from" dropdown
+    });
+
+    // Add event listeners for input and suggestions
+    fromInput.addEventListener('input', async function() {
+        const query = fromInput.value;
+        if (query.length >= 2) {
+            const suggestions = await fetchCitySuggestions(query);
+            showSuggestions(fromInput, fromSuggestions, suggestions);
+        } else {
+            fromSuggestions.innerHTML = '';
+        }
+    });
+
     toInput.addEventListener('input', async function() {
         const query = toInput.value;
-        if (query.length >= 2) {  // Only search if user has typed at least 2 characters
+        if (query.length >= 2) {
             const suggestions = await fetchCitySuggestions(query);
             showSuggestions(toInput, toSuggestions, suggestions);
         } else {
-            toSuggestions.innerHTML = '';  // Clear suggestions if input is empty
+            toSuggestions.innerHTML = '';
+        }
+    });
+
+    // Hide suggestions when clicking outside of the input or suggestions
+    document.addEventListener('click', function(event) {
+        if (!fromInput.contains(event.target) && !fromSuggestions.contains(event.target)) {
+            fromSuggestions.innerHTML = '';  // Hide "from" suggestions if clicked outside
+            fromSuggestions.style.display = 'none';
+        }
+        if (!toInput.contains(event.target) && !toSuggestions.contains(event.target)) {
+            toSuggestions.innerHTML = '';  // Hide "to" suggestions if clicked outside
+            toSuggestions.style.display = 'none';
         }
     });
 });
