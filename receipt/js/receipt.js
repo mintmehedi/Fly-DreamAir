@@ -63,7 +63,47 @@ function displayDynamicTicketInfo() {
         <p><strong>Payment Method:</strong> Credit Card</p>
         <p><strong>Transaction ID:</strong> TXN987654321</p>
     `;
+}// Assuming the rest of your functions are correctly set up and working
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the dynamic ticket information when the page loads
+    displayDynamicTicketInfo();
+
+    // Setup event listeners for downloading the receipt and ticket
+    const downloadReceiptBtn = document.getElementById('download-receipt');
+    const downloadTicketBtn = document.getElementById('download-ticket');
+
+    if (downloadReceiptBtn) {
+        downloadReceiptBtn.addEventListener('click', function() {
+            downloadReceipt();
+        });
+    }
+
+    if (downloadTicketBtn) {
+        downloadTicketBtn.addEventListener('click', function() {
+            downloadTicket();
+        });
+    }
+});
+
+function downloadReceipt() {
+    const content = document.querySelector('.receipt-details').innerText; // Fetching text from the receipt details displayed on the page
+    const filename = "Receipt.txt"; // Setting a filename
+    downloadFile(content, filename, 'text/plain'); // Calling the download function
 }
 
-// Initialize the dynamic ticket information when the page loads
-document.addEventListener('DOMContentLoaded', displayDynamicTicketInfo);
+function downloadTicket() {
+    const content = document.querySelector('.ticket-details').innerText; // Fetching text from the ticket details displayed on the page
+    const filename = "Ticket.txt"; // Setting a filename
+    downloadFile(content, filename, 'text/plain'); // Calling the download function
+}
+
+function downloadFile(content, fileName, fileType) {
+    const blob = new Blob([content], { type: fileType });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    link.click();
+    URL.revokeObjectURL(url);
+}

@@ -147,7 +147,7 @@ input[type="radio"] {
     max-height: 100px;        /* Smaller max height */
     overflow-y: auto;         /* Enable vertical scroll */
     position: absolute;       /* Position it below the input field */
-    width: 100%;              /* Match input width */
+    width: 20%;              /* Match input width */
     background-color: white;  /* Background color */
     z-index: 999;             /* Ensure it stays above other content */
     font-size: 12px;          /* Smaller font size */

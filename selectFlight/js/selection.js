@@ -1,3 +1,19 @@
+document.getElementById('help-link').addEventListener('click', function() {
+    window.location.href = '../../help/html/help.html';
+});
+
+document.getElementById('sign-up').addEventListener('click', function() {
+    window.location.href = '../../signup/html/signup.html';
+});
+
+document.getElementById('sign-in').addEventListener('click', function() {
+    window.location.href = '../../login/html/login.html';
+});
+
+document.getElementById('home').addEventListener('click', function() {
+    window.location.href = '../../homepage/html/homepage.html';
+});
+
 // Select all buttons with the class 'select-btn' and add an event listener to each
 document.querySelectorAll('.select-btn').forEach(button => {
     button.addEventListener('click', function() {

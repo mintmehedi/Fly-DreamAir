@@ -1,3 +1,15 @@
+document.getElementById('help-link').addEventListener('click', function() {
+    window.location.href = '../../help/html/help.html';
+});
+
+document.getElementById('sign-up').addEventListener('click', function() {
+    window.location.href = '../../signup/html/signup.html';
+});
+
+document.getElementById('sign-in').addEventListener('click', function() {
+    window.location.href = '../../login/html/login.html';
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Seat selection logic
     const seatGrid = document.getElementById('seat-grid');

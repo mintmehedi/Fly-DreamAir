@@ -138,38 +138,31 @@ h2 {
 }
 
 /* Download Buttons */
-.download-buttons {
-    margin-top: 40px;
-    text-align: center;
+.download-button {
+    background-color: #007BFF; /* Button background color (Bootstrap primary blue) */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding for a decent button size */
+    border: none;              /* Remove default border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 14px;           /* Button text size */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+    margin: 10px 0;            /* Margin for spacing */
+    display: inline-block;     /* Inline-block for better control */
 }
 
-button.download-ticket-btn, button.download-receipt-btn {
-    background-color: #E8B749;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 7px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 0 15px;
-    transition: background-color 0.3s ease;
+.download-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-button.download-ticket-btn:hover, button.download-receipt-btn:hover {
-    background-color: #d1a43f;
+.download-button:active {
+    background-color: #003d7a; /* Even darker blue when the button is clicked */
 }
 
-/* Back to Main Menu Button */
-.back-button-container {
-    margin-top: 30px;
-    text-align: center;
+.download-button:focus {
+    outline: none; /* Remove focus outline */
 }
-/* Download and Back Buttons Hover Effects */
-button.download-ticket-btn:hover, button.download-receipt-btn:hover {
-    background-color: #c89e2f; /* Darker gold for hover effect */
-    transform: scale(1.05); /* Slight scaling for interaction feedback */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
-}
+
 
 .back-main-menu-btn:hover {
     background-color: #3a3a3a; /* Darker grey for hover effect */

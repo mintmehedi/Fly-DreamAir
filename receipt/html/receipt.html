@@ -67,13 +67,15 @@
 
         <!-- Download and Back Buttons -->
         <div class="download-buttons">
-            <button class="download-ticket-btn">Download Ticket</button>
-            <button class="download-receipt-btn">Download Receipt</button>
+            <!-- Assuming this is within your receipt or ticket display section -->
+            <button id="download-ticket" class="download-button">Download Ticket</button>
+            <button id="download-receipt" class="download-button">Download Receipt</button>
+
         </div>
 
         <!-- Back to Main Menu Button -->
         <div class="back-button-container">
-            <a href="main-menu.html" class="back-main-menu-btn">Back to Main Menu</a>
+            <a href="../../homepage/html/homepage.html" class="back-main-menu-btn">Back to Main Menu</a>
         </div>
     </div>
 
@@ -135,7 +137,8 @@
             </div>
         </div>
     </footer>
-
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script src="../js/receipt.js"></script>
 </body>
 </html>
