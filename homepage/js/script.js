@@ -1,5 +1,5 @@
 document.getElementById('our-destinations').addEventListener('click', function() {
-    window.location.href = '../../destinations/html/destination.html';
+    window.location.href = '../destinations/html/destination.html';
 });
 
 document.getElementById('help-link').addEventListener('click', function() {

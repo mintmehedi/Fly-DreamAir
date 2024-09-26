@@ -30,7 +30,7 @@ loginForm.addEventListener('submit', function(event) {
     if (isValid) {
         // Simulate successful login and redirect to homepage
         alert('Login successful! Redirecting to homepage...');
-        window.location.href = '../../homepage/html/homepage.html'; // Redirect to homepage (replace with your actual path)
+        window.location.href = '../../index.html'; // Redirect to homepage (replace with your actual path)
     }
 });
 

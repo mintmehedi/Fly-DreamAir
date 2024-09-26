@@ -36,7 +36,7 @@ form.addEventListener('submit', function(event) {
     if (isValid) {
         // Show a success message (can replace this with an actual page navigation later)
         alert('Registration successful! Navigating to homepage...');
-        window.location.href = '../../homepage/html/homepage.html';
+        window.location.href = '../../index.html';
     }
 });
 
