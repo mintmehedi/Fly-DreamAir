@@ -46,11 +46,13 @@ body {
     width: 100%;
     position: relative;
     margin-bottom: 24px;
+    display: flex;
+    justify-content: center; /* Center the input inside the container */
 }
 
 .input-field {
-    width: 90%; /* Reduce the width from 100% to 90% */
-    max-width: 350px; /* Add a max-width to limit the size on larger screens */
+    width: 100%;
+    max-width: 350px; /* Control max-width */
     padding: 12px 15px 12px 45px; /* Room for icons */
     background: #F2F3F4;
     border-radius: 5px;
@@ -58,15 +60,14 @@ body {
     font-size: 14px;
     color: #333;
     outline: none;
-    margin: 0 auto; /* Center the input field */
-    display: block;
 }
 
-
+/* Input Icon */
 .input-icon {
     position: absolute;
-    top: 12px; /* Adjust to center vertically */
+    top: 50%; /* Center the icon vertically */
     left: 15px;
+    transform: translateY(-50%);
     font-size: 18px;
     color: #b0b0b0;
 }
@@ -91,6 +92,7 @@ body {
 /* Sign in Button */
 .signin-button {
     width: 100%;
+    max-width: 350px; /* Set the same max-width as input fields for consistency */
     padding: 12px;
     background: #000;
     border: none;
