@@ -8,11 +8,12 @@
     <title>FlyDreamAir Login</title>
 </head>
 <body>
-    <body>
-        <div class="container">
-            <div class="flydreamair-title">FlyDreamAir</div>
-            <div class="login-title">Login</div>
-    
+    <div class="container">
+        <div class="flydreamair-title">FlyDreamAir</div>
+        <div class="login-title">Login</div>
+        
+        <!-- Login Form -->
+        <form id="login-form">  <!-- Added form element -->
             <!-- Email Input -->
             <div class="input-container">
                 <i class="fas fa-envelope input-icon"></i>
@@ -29,27 +30,28 @@
             </div>
     
             <!-- Sign in Button -->
-            <button class="signin-button" id="signinBtn">Sign In</button>
-    
-            <!-- Continue with social -->
-            <div class="or-continue">or continue with</div>
-            <div class="social-buttons-container">
-                <button class="social-btn google">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google G">
-                </button>
-                <button class="social-btn facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </button>
-            </div>
-    
-            <!-- Register Prompt -->
-            <div class="registration-prompt">
-                <span>Don’t have an account yet? </span>
-                <a href="#" class="register-link">Register for free</a>
-            </div>
+            <button type="submit" class="signin-button" id="signinBtn">Sign In</button>
+        </form>
+
+        <!-- Continue with social -->
+        <div class="or-continue">or continue with</div>
+        <div class="social-buttons-container">
+            <button class="social-btn google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google G">
+            </button>
+            <button class="social-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+            </button>
         </div>
     
-        <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="../js/login.js">
+        <!-- Register Prompt -->
+        <div class="registration-prompt">
+            <span>Don’t have an account yet? </span>
+            <a href="/signup/html/signup.html" class="register-link">Register for free</a>
+        </div>
+    </div>
+    
+    <!-- Correct JavaScript inclusion -->
+    <script src="../js/login.js"></script>
 </body>
 </html>
