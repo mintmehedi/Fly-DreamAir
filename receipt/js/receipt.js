@@ -1,3 +1,7 @@
+document.getElementById('mb').addEventListener('click', function() {
+    window.location.href = '../../manageBooking/html/mb.html';
+});
+
 // Function to retrieve flight data from sessionStorage
 function getFlightData() {
     const flightData = sessionStorage.getItem('flightData');

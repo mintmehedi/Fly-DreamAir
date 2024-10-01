@@ -103,6 +103,24 @@ a {
     color: #283841;
 }
 
+/* Manage Booking Button */
+.manage-booking {
+    font-size: 14px;
+    font-weight: 500;
+    color: #283841;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #283841; /* Border color matching the brand theme */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 20px; /* Space between Sign Up and Manage Booking */
+}
+
+.manage-booking:hover {
+    background-color: #283841; /* On hover, background becomes dark */
+    color: #fff; /* Text becomes white */
+}
+
 /* Payment Success Section */
 .payment-success-container {
     width: 85%;
