@@ -1,0 +1,174 @@
+/* Main Layout for the Seat Selection Page */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px; /* Ensure there's padding for better layout */
+    gap: 30px; /* Space between the sections */
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 20px; /* Gap between the seat and confirmation boxes */
+}
+
+.confirm-box {
+    background-color: #283841;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.onboard-services {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px; /* Adjust width to make it smaller */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Seat Styles */
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #283841;
+}
+
+.seat-selection-box h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #283841;
+    margin-bottom: 20px; /* Adjust the value to increase/decrease the space */
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.seat-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.seat-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.seat-group {
+    display: flex;
+    gap: 5px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: #283841; /* Default seat color */
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.seat.available:hover {
+    background-color: #4a5e6d; /* Hover effect for available seats */
+}
+
+.seat.booked {
+    background-color: #6c757d68; /* Booked seat color */
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: #E8B749; /* Selected seat color */
+}
+
+.aisle {
+    width: 50px;
+}
+
+.row-gap {
+    height: 20px;
+}
+
+.seat-confirmation {
+    margin-top: 20px; /* Add space between selected seat info and confirmation */
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.seat-confirmation p {
+    font-size: 18px;
+    color: #283841;
+    font-weight: bold;
+}
+
+#confirm-seat-number {
+    color: #E8B749; /* Highlight selected seat */
+    font-weight: bold;
+    font-size: 18px;
+}
+#current-seat-number {
+    color: #E78E44; /* Highlight current seat with the same color */
+    font-weight: bold;
+    font-size: 18px; /* Match font size for consistency */
+}
+
+.confirm-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #E8B749;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.confirm-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.confirm-button:hover:not(:disabled) {
+    background-color: #d1a837;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section,
+    .onboard-services {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+/* Styling for the Current Seat */
+.current-seat {
+    background-color: #E78E44; /* Use a distinct color for the current seat */
+    border: 2px solid #FF6F3D; /* Highlighted border */
+    cursor: not-allowed;       /* Indicate that the seat is not selectable */
+}

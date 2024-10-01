@@ -1,0 +1,145 @@
+/* Sidebar Navigation Panel Styles */
+.sidebar-container {
+    display: flex;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #ffffff; /* Soft, light background for a modern look */
+    color: #495057; /* Darker text for readability */
+    padding: 30px 15px; /* Increased padding for better spacing */
+    height: 100vh; /* Full height */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
+    border-right: 2px solid #e8b749; /* Theme border for separation */
+}
+
+.sidebar h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #283841; /* Theme color for heading */
+    font-weight: 700;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    font-size: 18px;
+    padding: 12px 20px; /* Increased padding for a clean layout */
+    margin-bottom: 15px; /* Add space between items */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    cursor: pointer;
+    font-family: 'Inter', sans-serif; /* Minimalistic font */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between text and icon */
+}
+
+.sidebar-item:hover {
+    background-color: #e8b749; /* Highlight background on hover */
+    color: #ffffff;
+    transform: translateX(5px); /* Slide-in effect on hover */
+}
+
+.sidebar-item.active {
+    background-color: #283841; /* Active item background */
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sidebar-item.active::after {
+    content: '→';
+    font-size: 16px;
+    color: #e8b749;
+    margin-left: 10px;
+}
+
+.main-content-section {
+    flex: 4;
+    padding: 40px;
+    background-color: #ffffff; /* Clean white background */
+}
+
+/* Enhanced Content Sections */
+.content-section {
+    display: none; /* Hide sections by default */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for content boxes */
+    transition: all 0.3s ease; /* Smooth appearance */
+}
+
+.content-section.active {
+    display: block; /* Show the active section */
+    animation: fadeIn 0.4s ease; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography and Heading Styles */
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #283841;
+    margin-bottom: 20px; /* Add space below the headings */
+    font-size: 22px;
+}
+
+/* Form and Button Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.save-button, .cancel-button {
+    background-color: #283841; /* Darker button color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-top: 10px;
+}
+
+.save-button:hover,
+.cancel-button:hover {
+    background-color: #e8b749; /* Theme hover effect */
+}
+
+/* Responsive Design for Sidebar */
+@media (max-width: 768px) {
+    .sidebar-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #e8b749;
+    }
+
+    .main-content-section {
+        width: 100%;
+    }
+}

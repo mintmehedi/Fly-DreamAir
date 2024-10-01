@@ -79,6 +79,10 @@ document.getElementById('confirmation-form').addEventListener('submit', function
     const passport = document.getElementById('passport').value;
     const paymentMethod = document.getElementById('payment-method').value;
 
+    // Store the email and phone number in sessionStorage
+    sessionStorage.setItem('email', email);  // Store the email
+    sessionStorage.setItem('phone', phone);  // Store the phone number
+
     // Simple validation (for demonstration purposes)
     if (fullName && email && phone && passport) {
         alert(`Flight booked successfully!\n\nFull Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nPayment Method: ${paymentMethod}`);
@@ -89,4 +93,5 @@ document.getElementById('confirmation-form').addEventListener('submit', function
         alert('Please fill out all required fields.');
     }
 });
+
 

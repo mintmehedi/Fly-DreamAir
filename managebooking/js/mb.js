@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Button to trigger redirect
+    const continueButton = document.getElementById('continueBtn');
+
+    // Redirect user to the booking changes page when the button is clicked
+    if (continueButton) {
+        continueButton.addEventListener('click', function() {
+            window.location.href = '../../bookingchanges/html/bk.html';
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     const continueButton = document.querySelector('.continue-button');
     const inputs = document.querySelectorAll('.booking-input');
     const formContainer = document.querySelector('.manage-booking-container');

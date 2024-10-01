@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const columns2 = ['D', 'E', 'F']; // For 2nd column (three seats per row)
     const columns3 = ['H', 'J']; // For 3rd column (two seats per row, different seat labels)
 
-    const bookedSeats = ['1A', '1B', '2D', '5H']; // Example of booked seats
+    const bookedSeats = ['1A', '1E', '1J', '2D', '2F', '3A', '3E', '3H', '4B', '4J', '5B','5D', '5H', '6A', '6F', '7B', '7F', '8A', '8H', '9E', '10A', '10D', '10J']; // Example of booked seats
 
     function createSeat(row, seatLabel) {
         const seatButton = document.createElement('button');

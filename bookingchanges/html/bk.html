@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Booking - FlyDreamAir</title>
+    <title>FlyDreamAir</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@1,900&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM Sans:wght@500;700&display=swap" />
@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/header.css">  <!-- Linking css files-->
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/mb.css">
+    <link rel="stylesheet" href="../css/bk.css">
+    <link rel="stylesheet" href="../css/pinfo.css">
 </head>
 <body>
     <header>
@@ -24,45 +25,69 @@
                 <span class="dreamair">DreamAir</span>
             </div>
             <div class="deals-parent">
-                <div class="deals">
-                    <i class="fas fa-question-circle"></i> Help
+                <div class="deals">Deals</div>
+                <div class="latest-updates">Latest Updates</div>
+                <div class="deals">Our Destinations</div>
+                <div class="deals">Flights</div>
+                <div class="deals">Help</div>
+                <div class="deals">Sign In</div>
+                <div class="sign-up-wrapper">
+                    <div class="deals sign-up">Sign Up</div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Manage Booking Section -->
-    <section class="manage-booking-section">
-        <div class="manage-booking-container">
-            <!-- Main Title for Manage Booking -->
-            <h1 class="manage-booking-title">Manage Booking</h1>
-            <!-- Subtitle for Instructions -->
-            <p class="manage-booking-subtitle">Enter your booking reference, first name, and last name</p>
+ <!-- Sidebar Navigation Panel -->
+<section class="sidebar-container">
+    <div class="sidebar">
+        <h3>Modify Booking</h3>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active" id="seat-modification-tab">Seat Modification</li>
+            <li class="sidebar-item" id="personal-info-tab">Update Personal Information</li>
+            <li class="sidebar-item" id="cancel-flight-tab">Cancel Flight</li> <!-- Removed the reschedule flight option -->
+        </ul>
+    </div>
 
-            <div class="input-container">
-                <i class="fas fa-ticket-alt input-icon"></i> <!-- Booking Reference Icon -->
-                <input type="text" placeholder="Booking Reference Number" class="booking-input">
+    <!-- Main Content Section -->
+    <div class="main-content-section">
+        <!-- Seat Modification (Default Section) -->
+        <div id="seat-modification-section" class="content-section active">
+            <div class="seat-selection-box">
+                <h2>Select Your Seat</h2>
+                <div id="seat-grid" class="seat-grid"></div>
             </div>
-            <div class="input-container">
-                <i class="fas fa-user input-icon"></i> <!-- First Name Icon -->
-                <input type="text" placeholder="First Name" class="booking-input">
-            </div>
-            <div class="input-container">
-                <i class="fas fa-user input-icon"></i> <!-- Last Name Icon -->
-                <input type="text" placeholder="Last Name" class="booking-input">
-            </div>
-            
-
-            <!-- Buttons for Continue and Sign Up -->
-            <div class="button-container">
-                <button class="signup-button">sign up</button>
-                <span class="or-text">or</span>
-                <button class="continue-button" id="continueBtn">Continue</button>
+            <div class="confirm-box">
+                <p>Your current seat number is: <span id="current-seat-number">None</span></p>
+                <p>Your selected seat number is: <span id="confirm-seat-number">None</span></p>
+                <button class="confirm-button" id="confirm-button" disabled>Confirm</button>
             </div>
         </div>
-    </section>
 
-    <!-- Footer Section -->
+        <!-- Update Personal Information Section -->
+        <div id="personal-info-section" class="content-section">
+            <h2>Update Personal Information</h2>
+            <form id="personal-info-form">
+                <label for="passenger-name">Name:</label>
+                <input type="text" id="passenger-name" name="passenger-name" placeholder="Enter your name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+                <button type="button" class="save-button">Save Changes</button>
+            </form>
+        </div>
+
+        <!-- Cancel Flight Section -->
+        <div id="cancel-flight-section" class="content-section">
+            <h2>Cancel Flight</h2>
+            <p>If you wish to cancel your flight, please confirm your action below.</p>
+            <button type="button" class="cancel-button">Cancel Flight</button>
+        </div>
+    </div>
+</section>
+
+
     <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -71,7 +96,7 @@
                         <span class="fly">Fly</span>
                         <span class="dreamair">DreamAir</span>
                     </div>
-                </div>
+                </div>                
                 <div class="footer-sections">
                     <div class="footer-section">
                         <b class="section-title">Product</b>
@@ -121,6 +146,6 @@
         </div>
     </footer>
 
-    <script src="../js/mb.js"></script>
+    <script src="../js/bk.js"></script>
 </body>
 </html>
