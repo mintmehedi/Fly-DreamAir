@@ -155,3 +155,43 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('seat-modification-tab').classList.add('active');
     document.getElementById('seat-modification-section').classList.add('active');
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Modal Elements
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modal-message');
+    const closeBtn = document.querySelector('.close-btn');
+    const okBtn = document.getElementById('modal-ok-btn');
+
+    // Function to Show Modal with Message
+    function showModal(message, callback) {
+        modalMessage.textContent = message; // Set the message
+        modal.style.display = 'block'; // Show the modal
+
+        // Close Modal when clicking on 'OK' or 'X'
+        okBtn.onclick = closeBtn.onclick = function () {
+            modal.style.display = 'none';
+            if (callback) callback();
+        };
+    }
+
+    // Event Listener for Seat Change Confirmation
+    document.getElementById('confirm-button').addEventListener('click', function () {
+        showModal('Your seat has been changed successfully!', function () {
+            // Optionally reset the selection state here
+        });
+    });
+
+    // Event Listener for Saving Personal Details
+    document.querySelector('.save-button').addEventListener('click', function () {
+        showModal('Personal details updated successfully.');
+    });
+
+    // Event Listener for Cancel Flight
+    document.querySelector('.cancel-button').addEventListener('click', function () {
+        showModal('Your flight has been cancelled. You will receive a refund in 2-3 business days.', function () {
+            // Redirect to homepage after confirmation
+            window.location.href = '../../index.html';
+        });
+    });
+});
