@@ -1,0 +1,11 @@
+[project]
+name = "fly-dreamair"
+version = "0.1.0"
+description = "Fly DreamAir static site dev environment"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "livereload>=2.7",
+]
